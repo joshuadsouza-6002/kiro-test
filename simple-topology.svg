@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="Arial, sans-serif">
+  <!-- Clean white background -->
+  <rect width="1200" height="800" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="black">NovaTech Zero-Trust Network Topology</text>
+
+  <!-- WAN connection between routers -->
+  <line x1="350" y1="200" x2="850" y2="200" stroke="black" stroke-width="2"/>
+  <text x="600" y="185" text-anchor="middle" font-size="12" fill="black">10.0.0.0/30</text>
+
+  <!-- Router R1 -->
+  <circle cx="350" cy="200" r="30" fill="#87CEEB" stroke="black" stroke-width="2"/>
+  <text x="350" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="black">R1</text>
+  <text x="350" y="245" text-anchor="middle" font-size="10" fill="black">2911 Router</text>
+  <text x="280" y="185" font-size="10" fill="black">10.0.0.1/30</text>
+
+  <!-- Router R2 -->
+  <circle cx="850" cy="200" r="30" fill="#87CEEB" stroke="black" stroke-width="2"/>
+  <text x="850" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="black">R2</text>
+  <text x="850" y="245" text-anchor="middle" font-size="10" fill="black">2911 Router</text>
+  <text x="870" y="185" font-size="10" fill="black">10.0.0.2/30</text>
+
+  <!-- Switch SW1 -->
+  <rect x="280" y="320" width="140" height="40" fill="#87CEEB" stroke="black" stroke-width="2"/>
+  <text x="350" y="345" text-anchor="middle" font-size="12" font-weight="bold" fill="black">SW1</text>
+  <text x="350" y="375" text-anchor="middle" font-size="10" fill="black">2960-24TT Switch</text>
+
+  <!-- Switch SW2 -->
+  <rect x="780" y="320" width="140" height="40" fill="#87CEEB" stroke="black" stroke-width="2"/>
+  <text x="850" y="345" text-anchor="middle" font-size="12" font-weight="bold" fill="black">SW2</text>
+  <text x="850" y="375" text-anchor="middle" font-size="10" fill="black">2960-24TT Switch</text>
+
+  <!-- Trunk connections -->
+  <line x1="350" y1="230" x2="350" y2="320" stroke="black" stroke-width="2"/>
+  <text x="365" y="275" font-size="9" fill="black">Trunk</text>
+  
+  <line x1="850" y1="230" x2="850" y2="320" stroke="black" stroke-width="2"/>
+  <text x="865" y="275" font-size="9" fill="black">Trunk</text>
+
+  <!-- PC-Mgmt (VLAN 10) -->
+  <rect x="80" y="450" width="100" height="60" fill="#90EE90" stroke="black" stroke-width="1"/>
+  <text x="130" y="470" text-anchor="middle" font-size="10" font-weight="bold" fill="black">PC-Mgmt</text>
+  <text x="130" y="485" text-anchor="middle" font-size="9" fill="black">VLAN 10</text>
+  <text x="130" y="500" text-anchor="middle" font-size="9" fill="black">192.168.10.10/24</text>
+  <line x1="300" y1="360" x2="180" y2="450" stroke="black" stroke-width="1"/>
+
+  <!-- PC-Staff (VLAN 20) -->
+  <rect x="220" y="450" width="100" height="60" fill="#FFB6C1" stroke="black" stroke-width="1"/>
+  <text x="270" y="470" text-anchor="middle" font-size="10" font-weight="bold" fill="black">PC-Staff</text>
+  <text x="270" y="485" text-anchor="middle" font-size="9" fill="black">VLAN 20</text>
+  <text x="270" y="500" text-anchor="middle" font-size="9" fill="black">192.168.20.10/24</text>
+  <line x1="330" y1="360" x2="270" y2="450" stroke="black" stroke-width="1"/>
+
+  <!-- PC-Guest (VLAN 30) -->
+  <rect x="360" y="450" width="100" height="60" fill="#FFD700" stroke="black" stroke-width="1"/>
+  <text x="410" y="470" text-anchor="middle" font-size="10" font-weight="bold" fill="black">PC-Guest</text>
+  <text x="410" y="485" text-anchor="middle" font-size="9" fill="black">VLAN 30</text>
+  <text x="410" y="500" text-anchor="middle" font-size="9" fill="black">192.168.30.10/24</text>
+  <line x1="380" y1="360" x2="410" y2="450" stroke="black" stroke-width="1"/>
+
+  <!-- Server1 (VLAN 40) -->
+  <rect x="720" y="450" width="100" height="60" fill="#DDA0DD" stroke="black" stroke-width="1"/>
+  <text x="770" y="470" text-anchor="middle" font-size="10" font-weight="bold" fill="black">Server1</text>
+  <text x="770" y="485" text-anchor="middle" font-size="9" fill="black">VLAN 40</text>
+  <text x="770" y="500" text-anchor="middle" font-size="9" fill="black">192.168.40.10/24</text>
+  <line x1="820" y1="360" x2="770" y2="450" stroke="black" stroke-width="1"/>
+
+  <!-- PC-Monitor (VLAN 50) -->
+  <rect x="870" y="450" width="100" height="60" fill="#F0E68C" stroke="black" stroke-width="1"/>
+  <text x="920" y="470" text-anchor="middle" font-size="10" font-weight="bold" fill="black">PC-Monitor</text>
+  <text x="920" y="485" text-anchor="middle" font-size="9" fill="black">VLAN 50</text>
+  <text x="920" y="500" text-anchor="middle" font-size="9" fill="black">192.168.50.10/24</text>
+  <line x1="880" y1="360" x2="920" y2="450" stroke="black" stroke-width="1"/>
+
+  <!-- Router gateway IPs -->
+  <text x="200" y="280" font-size="9" fill="black">G0/0.10: 192.168.10.1/24</text>
+  <text x="200" y="295" font-size="9" fill="black">G0/0.20: 192.168.20.1/24</text>
+  <text x="200" y="310" font-size="9" fill="black">G0/0.30: 192.168.30.1/24</text>
+
+  <text x="900" y="280" font-size="9" fill="black">G0/0.40: 192.168.40.1/24</text>
+  <text x="900" y="295" font-size="9" fill="black">G0/0.50: 192.168.50.1/24</text>
+
+  <!-- Network labels -->
+  <text x="130" y="540" text-anchor="middle" font-size="9" fill="black">192.168.10.0/24</text>
+  <text x="270" y="540" text-anchor="middle" font-size="9" fill="black">192.168.20.0/24</text>
+  <text x="410" y="540" text-anchor="middle" font-size="9" fill="black">192.168.30.0/24</text>
+  <text x="770" y="540" text-anchor="middle" font-size="9" fill="black">192.168.40.0/24</text>
+  <text x="920" y="540" text-anchor="middle" font-size="9" fill="black">192.168.50.0/24</text>
+
+  <!-- OSPF Area label -->
+  <rect x="500" y="170" width="120" height="20" fill="yellow" stroke="black" stroke-width="1"/>
+  <text x="560" y="183" text-anchor="middle" font-size="10" fill="black">OSPF Area 0</text>
+
+  <!-- VLAN legend -->
+  <rect x="50" y="580" width="1100" height="180" fill="#F5F5F5" stroke="black" stroke-width="1"/>
+  <text x="60" y="600" font-size="12" font-weight="bold" fill="black">VLAN and IP Address Table</text>
+  
+  <text x="60" y="625" font-size="10" font-weight="bold" fill="black">VLAN | Name | Network | Gateway | Host IP | Device</text>
+  <line x1="60" y1="630" x2="1140" y2="630" stroke="black" stroke-width="1"/>
+  
+  <text x="60" y="645" font-size="9" fill="black">10 | Management | 192.168.10.0/24 | 192.168.10.1 | 192.168.10.10 | PC-Mgmt</text>
+  <text x="60" y="660" font-size="9" fill="black">20 | Staff | 192.168.20.0/24 | 192.168.20.1 | 192.168.20.10 | PC-Staff</text>
+  <text x="60" y="675" font-size="9" fill="black">30 | Guest | 192.168.30.0/24 | 192.168.30.1 | 192.168.30.10 | PC-Guest</text>
+  <text x="60" y="690" font-size="9" fill="black">40 | Server | 192.168.40.0/24 | 192.168.40.1 | 192.168.40.10 | Server1</text>
+  <text x="60" y="705" font-size="9" fill="black">50 | Monitoring | 192.168.50.0/24 | 192.168.50.1 | 192.168.50.10 | PC-Monitor</text>
+  
+  <text x="60" y="730" font-size="10" font-weight="bold" fill="black">WAN Link: 10.0.0.0/30 (R1: 10.0.0.1, R2: 10.0.0.2)</text>
+  <text x="60" y="745" font-size="9" fill="black">Security: ACLs, SSH-only management, CBAC firewall, OSPF routing protocol</text>
+
+</svg>
