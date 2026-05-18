@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="700" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#0f172a">NovaTech Solutions – Zero-Trust Network Topology</text>
+  <text x="700" y="58" text-anchor="middle" font-size="13" fill="#475569">CP50088E – Networks &amp; Security (Level 5) | 5 VLANs | OSPF Area 0 | Cisco Packet Tracer</text>
+
+  <!-- ===== WAN LINK between routers ===== -->
+  <line x1="500" y1="220" x2="900" y2="220" stroke="#1e293b" stroke-width="3"/>
+  <rect x="600" y="180" width="200" height="40" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="700" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350f">WAN Link – OSPF Area 0</text>
+  <text x="700" y="215" text-anchor="middle" font-size="11" fill="#78350f">10.0.0.0/30</text>
+
+  <text x="520" y="240" font-size="11" fill="#1e293b" font-weight="bold">G0/1: 10.0.0.1/30</text>
+  <text x="800" y="240" font-size="11" fill="#1e293b" font-weight="bold">G0/1: 10.0.0.2/30</text>
+
+  <!-- ===== ROUTER 1 ===== -->
+  <g>
+    <circle cx="450" cy="220" r="45" fill="#1e40af" stroke="#1e3a8a" stroke-width="2"/>
+    <text x="450" y="218" text-anchor="middle" font-size="14" font-weight="bold" fill="white">R1</text>
+    <text x="450" y="234" text-anchor="middle" font-size="9" fill="#dbeafe">Cisco 2911</text>
+    <text x="450" y="280" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">Router R1</text>
+    <text x="450" y="294" text-anchor="middle" font-size="10" fill="#475569">Router-ID 1.1.1.1</text>
+  </g>
+
+  <!-- ===== ROUTER 2 ===== -->
+  <g>
+    <circle cx="950" cy="220" r="45" fill="#1e40af" stroke="#1e3a8a" stroke-width="2"/>
+    <text x="950" y="218" text-anchor="middle" font-size="14" font-weight="bold" fill="white">R2</text>
+    <text x="950" y="234" text-anchor="middle" font-size="9" fill="#dbeafe">Cisco 2911</text>
+    <text x="950" y="280" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">Router R2</text>
+    <text x="950" y="294" text-anchor="middle" font-size="10" fill="#475569">Router-ID 2.2.2.2</text>
+  </g>
+
+  <!-- ===== TRUNK LINK R1 -> SW1 ===== -->
+  <line x1="450" y1="265" x2="450" y2="370" stroke="#dc2626" stroke-width="3" stroke-dasharray="6,3"/>
+  <rect x="455" y="300" width="130" height="38" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+  <text x="520" y="316" text-anchor="middle" font-size="10" font-weight="bold" fill="#7f1d1d">802.1Q TRUNK</text>
+  <text x="520" y="330" text-anchor="middle" font-size="9" fill="#7f1d1d">VLANs 10, 20, 30</text>
+
+  <!-- ===== TRUNK LINK R2 -> SW2 ===== -->
+  <line x1="950" y1="265" x2="950" y2="370" stroke="#dc2626" stroke-width="3" stroke-dasharray="6,3"/>
+  <rect x="815" y="300" width="130" height="38" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+  <text x="880" y="316" text-anchor="middle" font-size="10" font-weight="bold" fill="#7f1d1d">802.1Q TRUNK</text>
+  <text x="880" y="330" text-anchor="middle" font-size="9" fill="#7f1d1d">VLANs 40, 50</text>
+
+  <!-- ===== SWITCH 1 ===== -->
+  <g>
+    <rect x="380" y="370" width="140" height="50" rx="6" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+    <text x="450" y="392" text-anchor="middle" font-size="14" font-weight="bold" fill="white">SW1</text>
+    <text x="450" y="408" text-anchor="middle" font-size="9" fill="#cbd5e1">Cisco 2960-24TT</text>
+    <text x="450" y="438" text-anchor="middle" font-size="10" fill="#475569">SVI VLAN10: 192.168.10.2/24</text>
+  </g>
+
+  <!-- ===== SWITCH 2 ===== -->
+  <g>
+    <rect x="880" y="370" width="140" height="50" rx="6" fill="#475569" stroke="#1e293b" stroke-width="2"/>
+    <text x="950" y="392" text-anchor="middle" font-size="14" font-weight="bold" fill="white">SW2</text>
+    <text x="950" y="408" text-anchor="middle" font-size="9" fill="#cbd5e1">Cisco 2960-24TT</text>
+    <text x="950" y="438" text-anchor="middle" font-size="10" fill="#475569">SVI VLAN50: 192.168.50.2/24</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- ===== VLAN 10 - Management (PC-Mgmt) ====== -->
+  <!-- ============================================ -->
+  <line x1="410" y1="420" x2="180" y2="540" stroke="#16a34a" stroke-width="2"/>
+  <g>
+    <rect x="100" y="540" width="160" height="100" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="180" y="562" text-anchor="middle" font-size="12" font-weight="bold" fill="#14532d">VLAN 10 – Management</text>
+    <text x="180" y="582" text-anchor="middle" font-size="10" fill="#166534">Network: 192.168.10.0/24</text>
+    <text x="180" y="598" text-anchor="middle" font-size="10" fill="#166534">Gateway: 192.168.10.1</text>
+    <text x="180" y="616" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">PC-Mgmt</text>
+    <text x="180" y="632" text-anchor="middle" font-size="10" fill="#166534">192.168.10.10/24</text>
+  </g>
+  <text x="170" y="690" text-anchor="middle" font-size="9" fill="#475569">R1 G0/0.10 = 192.168.10.1</text>
+
+  <!-- ============================================ -->
+  <!-- ===== VLAN 20 - Staff (PC-Staff) =========== -->
+  <!-- ============================================ -->
+  <line x1="440" y1="420" x2="380" y2="540" stroke="#2563eb" stroke-width="2"/>
+  <g>
+    <rect x="290" y="540" width="160" height="100" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="370" y="562" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a8a">VLAN 20 – Staff</text>
+    <text x="370" y="582" text-anchor="middle" font-size="10" fill="#1e40af">Network: 192.168.20.0/24</text>
+    <text x="370" y="598" text-anchor="middle" font-size="10" fill="#1e40af">Gateway: 192.168.20.1</text>
+    <text x="370" y="616" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">PC-Staff</text>
+    <text x="370" y="632" text-anchor="middle" font-size="10" fill="#1e40af">192.168.20.10/24</text>
+  </g>
+  <text x="370" y="690" text-anchor="middle" font-size="9" fill="#475569">R1 G0/0.20 = 192.168.20.1</text>
+
+  <!-- ============================================ -->
+  <!-- ===== VLAN 30 - Guest (PC-Guest) =========== -->
+  <!-- ============================================ -->
+  <line x1="475" y1="420" x2="570" y2="540" stroke="#ea580c" stroke-width="2"/>
+  <g>
+    <rect x="490" y="540" width="160" height="100" rx="6" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+    <text x="570" y="562" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c2d12">VLAN 30 – Guest</text>
+    <text x="570" y="582" text-anchor="middle" font-size="10" fill="#9a3412">Network: 192.168.30.0/24</text>
+    <text x="570" y="598" text-anchor="middle" font-size="10" fill="#9a3412">Gateway: 192.168.30.1</text>
+    <text x="570" y="616" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">PC-Guest</text>
+    <text x="570" y="632" text-anchor="middle" font-size="10" fill="#9a3412">192.168.30.10/24</text>
+  </g>
+  <text x="570" y="690" text-anchor="middle" font-size="9" fill="#475569">R1 G0/0.30 = 192.168.30.1</text>
+
+  <!-- ============================================ -->
+  <!-- ===== VLAN 40 - Server (Server1) =========== -->
+  <!-- ============================================ -->
+  <line x1="920" y1="420" x2="830" y2="540" stroke="#7c3aed" stroke-width="2"/>
+  <g>
+    <rect x="750" y="540" width="160" height="100" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="830" y="562" text-anchor="middle" font-size="12" font-weight="bold" fill="#4c1d95">VLAN 40 – Server</text>
+    <text x="830" y="582" text-anchor="middle" font-size="10" fill="#5b21b6">Network: 192.168.40.0/24</text>
+    <text x="830" y="598" text-anchor="middle" font-size="10" fill="#5b21b6">Gateway: 192.168.40.1</text>
+    <text x="830" y="616" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">Server1</text>
+    <text x="830" y="632" text-anchor="middle" font-size="10" fill="#5b21b6">192.168.40.10/24</text>
+  </g>
+  <text x="830" y="690" text-anchor="middle" font-size="9" fill="#475569">R2 G0/0.40 = 192.168.40.1</text>
+
+  <!-- ============================================ -->
+  <!-- ===== VLAN 50 - Monitoring (PC-Monitor) ==== -->
+  <!-- ============================================ -->
+  <line x1="985" y1="420" x2="1080" y2="540" stroke="#db2777" stroke-width="2"/>
+  <g>
+    <rect x="970" y="540" width="180" height="100" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+    <text x="1060" y="562" text-anchor="middle" font-size="12" font-weight="bold" fill="#831843">VLAN 50 – Monitoring</text>
+    <text x="1060" y="582" text-anchor="middle" font-size="10" fill="#9d174d">Network: 192.168.50.0/24</text>
+    <text x="1060" y="598" text-anchor="middle" font-size="10" fill="#9d174d">Gateway: 192.168.50.1</text>
+    <text x="1060" y="616" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">PC-Monitor</text>
+    <text x="1060" y="632" text-anchor="middle" font-size="10" fill="#9d174d">192.168.50.10/24</text>
+  </g>
+  <text x="1060" y="690" text-anchor="middle" font-size="9" fill="#475569">R2 G0/0.50 = 192.168.50.1</text>
+
+  <!-- ===== Sub-interface labels on R1 ===== -->
+  <g font-size="9" fill="#1e293b">
+    <text x="290" y="475">G0/0.10 dot1Q 10</text>
+    <text x="295" y="488">192.168.10.1/24</text>
+    <text x="295" y="510">G0/0.20 dot1Q 20</text>
+    <text x="295" y="523">192.168.20.1/24</text>
+    <text x="510" y="475">G0/0.30 dot1Q 30</text>
+    <text x="510" y="488">192.168.30.1/24</text>
+  </g>
+
+  <!-- ===== Sub-interface labels on R2 ===== -->
+  <g font-size="9" fill="#1e293b">
+    <text x="780" y="475">G0/0.40 dot1Q 40</text>
+    <text x="780" y="488">192.168.40.1/24</text>
+    <text x="1010" y="475">G0/0.50 dot1Q 50</text>
+    <text x="1010" y="488">192.168.50.1/24</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- ===== LEGEND / KEY ========================= -->
+  <!-- ============================================ -->
+  <g>
+    <rect x="40" y="740" width="1320" height="135" rx="6" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="55" y="762" font-size="13" font-weight="bold" fill="#0f172a">VLAN &amp; IP Addressing Table</text>
+
+    <!-- Header row -->
+    <line x1="55" y1="772" x2="1345" y2="772" stroke="#cbd5e1"/>
+    <g font-size="11" font-weight="bold" fill="#334155">
+      <text x="65" y="788">VLAN</text>
+      <text x="135" y="788">Name</text>
+      <text x="265" y="788">Network</text>
+      <text x="410" y="788">Gateway (Router SVI)</text>
+      <text x="585" y="788">Host Device</text>
+      <text x="725" y="788">Host IP</text>
+      <text x="855" y="788">Lives On</text>
+      <text x="965" y="788">Security Policy (Zero-Trust)</text>
+    </g>
+    <line x1="55" y1="794" x2="1345" y2="794" stroke="#cbd5e1"/>
+
+    <g font-size="10" fill="#0f172a">
+      <text x="65" y="810">10</text>
+      <text x="135" y="810">Management</text>
+      <text x="265" y="810">192.168.10.0/24</text>
+      <text x="410" y="810">192.168.10.1</text>
+      <text x="585" y="810">PC-Mgmt</text>
+      <text x="725" y="810">192.168.10.10</text>
+      <text x="855" y="810">R1 / SW1</text>
+      <text x="965" y="810">Full access (admin VLAN), SSH-only mgmt</text>
+
+      <text x="65" y="826">20</text>
+      <text x="135" y="826">Staff</text>
+      <text x="265" y="826">192.168.20.0/24</text>
+      <text x="410" y="826">192.168.20.1</text>
+      <text x="585" y="826">PC-Staff</text>
+      <text x="725" y="826">192.168.20.10</text>
+      <text x="855" y="826">R1 / SW1</text>
+      <text x="965" y="826">Allowed → Server; Denied → Mgmt</text>
+
+      <text x="65" y="842">30</text>
+      <text x="135" y="842">Guest</text>
+      <text x="265" y="842">192.168.30.0/24</text>
+      <text x="410" y="842">192.168.30.1</text>
+      <text x="585" y="842">PC-Guest</text>
+      <text x="725" y="842">192.168.30.10</text>
+      <text x="855" y="842">R1 / SW1</text>
+      <text x="965" y="842" fill="#b91c1c">Denied → Server, Mgmt, Monitoring (BLOCKED tests)</text>
+
+      <text x="65" y="858">40</text>
+      <text x="135" y="858">Server</text>
+      <text x="265" y="858">192.168.40.0/24</text>
+      <text x="410" y="858">192.168.40.1</text>
+      <text x="585" y="858">Server1</text>
+      <text x="725" y="858">192.168.40.10</text>
+      <text x="855" y="858">R2 / SW2</text>
+      <text x="965" y="858">Inbound only from Mgmt &amp; Staff (ACL 140)</text>
+
+      <text x="65" y="874">50</text>
+      <text x="135" y="874">Monitoring</text>
+      <text x="265" y="874">192.168.50.0/24</text>
+      <text x="410" y="874">192.168.50.1</text>
+      <text x="585" y="874">PC-Monitor</text>
+      <text x="725" y="874">192.168.50.10</text>
+      <text x="855" y="874">R2 / SW2</text>
+      <text x="965" y="874">Read-only / Syslog destination</text>
+    </g>
+  </g>
+
+  <!-- ===== OSPF badge ===== -->
+  <g>
+    <rect x="630" y="100" width="140" height="40" rx="20" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="700" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#78350f">OSPF Process 1</text>
+    <text x="700" y="134" text-anchor="middle" font-size="10" fill="#78350f">Area 0 (Backbone)</text>
+  </g>
+
+  <!-- ===== Security badges ===== -->
+  <g>
+    <rect x="40" y="80" width="180" height="65" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="130" y="100" text-anchor="middle" font-size="11" font-weight="bold" fill="#7f1d1d">Security Layers (R1 &amp; R2)</text>
+    <text x="50" y="118" font-size="10" fill="#7f1d1d">• ACLs (least-privilege)</text>
+    <text x="50" y="132" font-size="10" fill="#7f1d1d">• SSH-only (Telnet blocked)</text>
+    <text x="50" y="146" font-size="10" fill="#7f1d1d">• CBAC stateful firewall</text>
+  </g>
+
+  <g>
+    <rect x="1180" y="80" width="180" height="65" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="1270" y="100" text-anchor="middle" font-size="11" font-weight="bold" fill="#14532d">Switch Hardening</text>
+    <text x="1190" y="118" font-size="10" fill="#14532d">• Unused ports shutdown</text>
+    <text x="1190" y="132" font-size="10" fill="#14532d">• Access ports per VLAN</text>
+    <text x="1190" y="146" font-size="10" fill="#14532d">• Trunk allowed-list</text>
+  </g>
+</svg>
